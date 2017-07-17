@@ -1,0 +1,65 @@
+body{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#general{
+  background : #0ec7f2;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height : 50px;
+  color : #0ec7f2;
+}
+
+div#gen{
+  background : white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height : 50px;
+  color : #0ec7f2;
+}
+
+div#otro{
+    background : white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.clase > div{
+   display: inline-block;
+   width: 12%;
+   margin-top: 1%;
+   align : center;
+}
+
+.clase2 > div{
+   display: inline-block;
+   width: 12%;
+   margin-top: 1%;
+   align : center;
+}
+
+label#label1{
+    display: block;
+    width: 100px;
+}
+
+hr#hr1
+{
+    color : gray;
+  margin-left: auto;
+    margin-right: auto;
+    width: 48%;
+   margin-top: 2em;
+}
+
+div#divhr
+{
+  margin-left: auto;
+    margin-right: auto;
+    width: 48%;
+   margin-top: 2em;
+}
