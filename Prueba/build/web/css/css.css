@@ -1,65 +1,37 @@
-body{
-  margin-left: auto;
-  margin-right: auto;
+div#columna {
+    display:inline;
+    margin-left: 27%;
 }
 
-div#general{
-  background : #0ec7f2;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height : 50px;
-  color : #0ec7f2;
-}
-
-div#gen{
-  background : white;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  height : 50px;
-  color : #0ec7f2;
-}
-
-div#otro{
-    background : white;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
-.clase > div{
-   display: inline-block;
-   width: 12%;
-   margin-top: 1%;
-   align : center;
-}
-
-.clase2 > div{
-   display: inline-block;
-   width: 12%;
-   margin-top: 1%;
-   align : center;
-}
-
-label#label1{
-    display: block;
-    width: 100px;
-}
-
-hr#hr1
+div#div1
 {
-    color : gray;
-  margin-left: auto;
-    margin-right: auto;
-    width: 48%;
-   margin-top: 2em;
+    display:inline;
+    padding:40px;
 }
 
-div#divhr
-{
-  margin-left: auto;
+div#div2 {
+    display: inline;
+    //padding: 20px;
+}
+
+div#div3 {
+    display: inline-block;
+    margin-left:56%;
+}
+
+div#general {
+    background: #57BDFF;
+    margin-left: 28%;
     margin-right: auto;
-    width: 48%;
-   margin-top: 2em;
+    width: 43%;
+    height: 50px;
+    color: #0ec7f2;
+}
+
+hr#hr1 {
+    color: gray;
+    margin-left: 29%;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 1em;
 }

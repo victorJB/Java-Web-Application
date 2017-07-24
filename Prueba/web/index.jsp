@@ -78,36 +78,34 @@
     });
  });
         </script>
+        
         <div id="general"></div>
-       <form action="GuardarProducto" method="POST" style="display:block">
-           <hr id="hr1"/>
-       
-           <div class="clase" align="center" display="inline" color="black">
-               <br/><div>Clave:</div>
-           <div><br/><br/><input type="text" name="claveProducto" size="15px"></div>  
-               <div>Nombre:</div>
-               <div><input type="text" name="nombreProducto" size="12px"></div>
-               </div> 
-          <br/>
-          <br/>
+        <hr id="hr1"/>
+        <br/><br/><br/>
+       <form action="GuardarProducto" method="POST" style="display:inline">
+           <div id="columna"> </div>
+           <div id="div1">Clave:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;
+           <input type="text" name="claveProducto"/></div> 
+           <div id="div1">Nombre:
+           <input type="text" name="nombreProducto"/></div>
+          <br/><br/><br/>
           
-  <div class="clase2" align="center">Tipo producto:
-  <select name="tipo" style="width: 150px" label="Tipo producto">
-      <% Queries consulta = new Queries(); %>
-      <% ResultSet resultset = consulta.getTipoProducto(); %>
-      <%  while(resultset.next()){ %>
-            <option><%= resultset.getString(2)%></option>
-        <% } %>
-  </select>
-  <input type="checkbox" name="status" value="activo">Es activo</div>
-  <br>   
-  <br>
-              <div align="center">Proveedores:</div>
-              
-              <br/>
-              
-              <div align="center">
-                  <table id="resultTable" border="1px">
+          <div id="columna"></div>
+          <div id="div1">Tipo Producto:
+              <select name="tipo" style="width: 150px" label="Tipo producto">
+                  <% Queries consulta = new Queries(); %>
+                  <% ResultSet resultset = consulta.getTipoProducto(); %>
+                  <%  while(resultset.next()){ %>
+                  <option><%= resultset.getString(2)%></option>
+                  <% } %>
+              </select>
+          </div>
+              <div id="div1">&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="status" value="activo" />&nbsp;&nbsp;&nbsp;Es activo</div>
+              <br/><br/><br/><br/>
+              <div id="columna"> </div>
+              <div id="div1">Proveedores:</div>
+              <br/><br/>
+              <table id="resultTable" border="1px" align="center">
                   <tr>
                       <th bgcolor="#D8D8D8">Editor</th>
                       <th bgcolor="#D8D8D8">Proveedor</th>
@@ -130,13 +128,12 @@
                         
                     </tr>
                     <% } %>
-                 
-</table>
-              </div>
-            <br/> 
-            <div id="gen" align="right"><a href="proveedor.jsp" color="blue">Agregar Proveedor</a></div>
-               <div id="gen" align="right"><input type="submit" value="Guardar"></div>
+              </table>
+              <br/>
+              <div id="div3" align="right"><a href="proveedor.jsp" color="#6CBFF7">Agregar Proveedor</a></div><br/><br/>
+               <div id="div3" align="right"><input type="submit" value="Guardar"/></div>
                                     </form>
+              <br/>
               <hr id="hr1"/>                          
     </body>
 </html>
