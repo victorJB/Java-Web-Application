@@ -8,12 +8,12 @@ package Servlets;
 import Controlador.Queries;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,6 +34,7 @@ public class GuardarProducto extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
@@ -45,20 +46,30 @@ public class GuardarProducto extends HttpServlet {
         String Tipo = request.getParameter("tipo");
         String check = request.getParameter("status");
         
-        Queries consulta = new Queries();
-        ResultSet resultset = consulta.getTipoProductoId(Tipo);
-        int tipo = 0;
-        
-        while(resultset.next()){
-           tipo = resultset.getInt(1);
+        if("".equals(clave) || "".equals(nombre) || "".equals(Tipo)){
+            
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Error faltan campos por llenar');"); 
+            out.println("window.location='index.jsp';");
+            out.println("</script>");
+            
         }
         
-        Queries consulta1 = new Queries();
-        consulta1.guardarProducto(clave, nombre, tipo, check);
+        else{
+            Queries consulta = new Queries();
+            ResultSet resultset = consulta.getTipoProductoId(Tipo);
+            int tipo = 0;
         
-        response.sendRedirect("index.jsp");
+            while(resultset.next()){
+            tipo = resultset.getInt(1);
+            }
+            
+            Queries consulta1 = new Queries();
+            consulta1.guardarProducto(clave, nombre, tipo, check);
         
-       
+            response.sendRedirect("index.jsp");
+        }
+    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

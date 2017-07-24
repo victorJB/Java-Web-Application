@@ -98,7 +98,7 @@ public class Queries extends Conexion{
         ResultSet resultset = query.getTablaProveedores();
         String queryString = "";
         while(resultset.next()){
-            queryString = "CALL GuardarProducto(?,?,?,?,?,)";
+            queryString = "CALL GuardarProducto(?,?,?,?,?,?)";
         ps = this.getConexion().prepareStatement(queryString);
         ps.setString(1, clave);
         ps.setString(2, nombre);
@@ -116,7 +116,7 @@ public class Queries extends Conexion{
         
         ps.setFloat(5, resultset.getFloat(4));
         
-        if(check.equals("activo")){
+        if(check != null){
             ps.setInt(6, 1);
         }
         

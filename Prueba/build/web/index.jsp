@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Hola con JSP</title>
+        <title>Java Web Application</title>
 <link href="css/css.css" rel="stylesheet" type="text/css">
     </head>
     <body>
@@ -80,7 +80,7 @@
         </script>
         
         <div id="general"></div>
-        <hr id="hr1"/>
+        <br/><hr id="hr1"/>
         <br/><br/><br/>
        <form action="GuardarProducto" method="POST" style="display:inline">
            <div id="columna"> </div>
