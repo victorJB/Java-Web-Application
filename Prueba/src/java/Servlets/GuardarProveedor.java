@@ -43,12 +43,23 @@ public class GuardarProveedor extends HttpServlet {
         
         String proveedor = request.getParameter("prov");
         String clave = request.getParameter("clave");
-        float costo = Float.parseFloat(request.getParameter("costo"));
         
-        Queries consulta = new Queries();
-        boolean respuesta = consulta.InsertarProveedor(proveedor,clave,costo);
+        if("".equals(request.getParameter("costo")) || "".equals(clave)){
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Error faltan campos por llenar');"); 
+            out.println("window.location='proveedor.jsp';");
+            out.println("</script>");
+        }
         
-        response.sendRedirect("index.jsp");
+        else{
+            
+            float costo = Float.parseFloat(request.getParameter("costo"));
+            Queries consulta = new Queries();
+            boolean respuesta = consulta.InsertarProveedor(proveedor,clave,costo);
+        
+            response.sendRedirect("index.jsp");
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
